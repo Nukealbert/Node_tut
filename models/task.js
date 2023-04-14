@@ -1,26 +1,25 @@
 import mongoose from "mongoose";
 
 const schema= new mongoose.Schema({
-    name:{
+    title:{
         type:String,
-        required:true
+        required:true,
     },
-    email:{
+    description:{
         type:String,
-        unique:true,
         required:true
     },
     password:{
-        required:true,
         type:String,
         select:false,
+        required:true
     },
     createdAt:{
         type:Date,
         default:Date.now,
     }
 });
-const User=mongoose.model('user',schema);
+const Task=mongoose.model('Task',schema);
 
 
 export default User

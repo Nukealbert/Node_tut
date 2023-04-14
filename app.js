@@ -10,10 +10,6 @@ config({
 
 
 export const app = express()
-
-
-
-
 //using middleware to process json from request
 app.use(express.json())
 app.use('/users',userRouter)
