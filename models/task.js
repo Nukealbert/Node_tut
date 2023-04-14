@@ -9,17 +9,22 @@ const schema= new mongoose.Schema({
         type:String,
         required:true
     },
-    password:{
-        type:String,
-        select:false,
-        required:true
+    isCompleted:{
+        type:Boolean,
+        default:false,
     },
+    user:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"User",
+        required:true,
+    },
+   
     createdAt:{
         type:Date,
         default:Date.now,
     }
 });
-const Task=mongoose.model('Task',schema);
+export const Task=mongoose.model('Task',schema);
 
 
 export default User
